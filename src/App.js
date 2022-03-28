@@ -4,7 +4,7 @@ function App() {
     return (
         <>
             <NavBar />
-            <div className="h-screen w-full bg-stone-400"></div>
+            <div className="h-screen w-full bg-stone-300"></div>
         </>
     );
 }
