@@ -3,6 +3,7 @@ import React from "react";
 function Surah(props) {
     const { name, ar_name, en_name, number_of_ayah, number_of_surah, type } =
         props;
+
     return (
         <div className="flex flex-row bg-gray-200  items-center font-normal text-white hover:text-cyan-500 rounded-md border-2 hover:border-cyan-500">
             <div className="h-10 w-10 rounded-full bg-gray-500 flex items-center justify-center ">
