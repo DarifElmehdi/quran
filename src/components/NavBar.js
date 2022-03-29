@@ -2,54 +2,56 @@ import React, { useState } from "react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 function NavBar(props) {
     let links = [
-        { title: "Home", url: "/" },
-        { title: "Reciters", url: "/" },
-        { title: "About Us", url: "/" },
-        { title: "Privacy", url: "/" },
-        { title: "Contact Us", url: "/" },
+        { key: 1, title: "Home", url: "/" },
+        { key: 2, title: "Reciters", url: "/reciters" },
+        { key: 5, title: "Privacy", url: "/privacy" },
+        { key: 6, title: "Contact Us", url: "/contactus" },
     ];
 
     let [open, setOpen] = useState(false);
     return (
-        <div className="shadow-xl w-full fixed top-0 left-0">
-            <div className="md:flex bg-white py-0 px-8 md:px-16 justify-between">
+        <div className=" shadow-md w-full fixed z-50">
+            <div className="md:flex bg-white px-4 md:px-10 md:justify-between">
                 <div className="cursor-pointer flex items-center">
                     <img
                         src="/assets/logo.png"
                         alt="quran"
-                        className="h-10 w-10 m-4 "
+                        className="h-10 w-10 m-2 "
                     />
-                    <a className="invisible md:visible text-3xl mb-2 pl-2 text-slate-700 font-medium">
+                    <a
+                        href="/"
+                        className=" text-2xl mb-2 pl-2 text-slate-900 font-medium"
+                    >
                         Quran
                     </a>
                 </div>
                 <ul
                     className={`${
                         !open ? "hidden" : ""
-                    } md:visible md:flex md:justify-center md:items-center md:space-x-4`}
+                    } md:visible md:flex md:items-center md:space-x-4`}
                 >
                     {links.map((link) => (
-                        <li className=" m-4 md:ml-8">
+                        <li key={link.key} className=" m-4 md:ml-8">
                             <a
                                 href={link.url}
-                                className="p-2 rounded-lg text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
+                                className="p-2 rounded-lg text-slate-900 font-medium hover:bg-slate-100 hover:text-yellow-500"
                             >
                                 {link.title}
                             </a>
                         </li>
                     ))}
-                    <button className="rounded-lg bg-gradient-to-r from-green-300 to-blue-600 hover:from-red-300 hover:to-yellow-600 font-medium text-white p-2 m-4 md:ml-8">
-                        Listen Now
+                    <button className=" m-4 md:ml-8 px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-600 text-white">
+                        Play Quran
                     </button>
                 </ul>
                 {open ? (
                     <XIcon
-                        className="cursor-pointer w-12 h-12 absolute top-2 right-8 md:hidden hover:bg-slate-100 hover:border-2 hover:border-slate-500 "
+                        className="cursor-pointer w-10 h-10 absolute top-2 right-8 md:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
                         onClick={() => setOpen(!open)}
                     ></XIcon>
                 ) : (
                     <MenuIcon
-                        className="cursor-pointer w-12 h-12 absolute top-2 right-8  md:hidden hover:bg-slate-100 hover:border-2 hover:border-slate-500"
+                        className="cursor-pointer w-10 h-10 absolute top-2 right-8  md:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
                         onClick={() => setOpen(!open)}
                     ></MenuIcon>
                 )}
