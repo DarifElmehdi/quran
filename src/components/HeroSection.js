@@ -32,6 +32,7 @@ function HeroSection(props) {
                 <div className="my-4 flex justify-between">
                     {results.map((item) => (
                         <a
+                            key={item.key}
                             href={item.link}
                             className=" px-2 py-0.5 rounded-full bg-white text-black  hover:bg-slate-100"
                         >
