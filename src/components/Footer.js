@@ -6,7 +6,7 @@ function Footer(props) {
             <div className="text-gray-700 text-center p-4">
                 © 2022 Copyright :{" "}
                 <a
-                    className="text-slate-900"
+                    className="text-blue-800"
                     href="https://github.com/DarifElmehdi"
                 >
                     Darif Elmehdi

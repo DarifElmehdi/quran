@@ -18,13 +18,13 @@ function Gallerie(props) {
         fetchSurahs();
     }, []);
     return (
-        <div className="w-full bg-slate-300 flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2   lg:grid-cols-3 gap-4">
+        <div className="flex w-full bg-slate-300  justify-center">
+            <div className="my-6 grid grid-cols-1 md:grid-cols-2   lg:grid-cols-3 gap-4">
                 {!surah && <div> loading....</div>}
                 {surah &&
                     surah.map((item) => (
                         <Surah
-                            id={item.index}
+                            key={item.number_of_surah}
                             name={item.name}
                             ar_name={item.name_translations.ar}
                             en_name={item.name_translations.en}
