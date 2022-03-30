@@ -16,11 +16,11 @@ function NavBar(props) {
                     <img
                         src="/assets/logo.png"
                         alt="quran"
-                        className="h-10 w-10 m-2 "
+                        className="h-10 w-auto m-2"
                     />
                     <a
                         href="/"
-                        className=" text-2xl mb-2 pl-2 text-slate-900 font-medium"
+                        className=" text-3xl mb-2 pl-2 text-slate-900 font-medium"
                     >
                         Quran
                     </a>

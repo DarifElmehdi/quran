@@ -31,7 +31,7 @@ function Player(props) {
                     id="my-audio"
                     controls
                     autoPlay
-                    className="my-2 w-full border-2 border-cyan-600 rounded-full"
+                    className="fixed bottom-0 w-full border-2 border-cyan-600 rounded-full"
                 >
                     <source src={url} />
                 </audio>
