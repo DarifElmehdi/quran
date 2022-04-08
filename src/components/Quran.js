@@ -54,7 +54,9 @@ function Quran(props) {
     };
     const getEnSurah = () => {
         axios
-            .get(`https://api.alquran.cloud/v1/surah/${surahnumber}/en.asad`)
+            .get(
+                `https://api.alquran.cloud/v1/surah/${surahnumber}/en.qaribullah`
+            )
             .then(function (response) {
                 setEnSurah(response.data.data.ayahs);
             })
@@ -158,14 +160,14 @@ function Quran(props) {
                     {surah && (
                         <ArAyah
                             {...surah[index]}
-                            index={index > 0 ? index : null}
+                            index={surahnumber == 1 ? index : index + 1}
                         />
                     )}
 
                     {ensurah && (
                         <EnAyah
                             {...ensurah[index]}
-                            index={index > 0 ? index : null}
+                            index={surahnumber == 1 ? index : index + 1}
                         />
                     )}
                     <img
