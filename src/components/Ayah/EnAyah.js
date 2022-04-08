@@ -1,15 +1,16 @@
 import React from "react";
 
 function EnAyah(props) {
-    const { text, number } = props;
+    const { text, number, index } = props;
     return (
-        <div className="h-auto mt-40 mx-10">
-            <div dir="rtl">
+        <div className="h-auto  mx-12 lg:mx-64">
+            <div>
                 <div
                     key={number}
-                    className="px-8 py-2 my-2 rounded-xl border-2 bg-white bg-opacity-75 text-center border-indigo-500 font-bold text-xl md:text-3xl lg:text-4xl"
+                    className="px-4 py-2 my-2 rounded-xl text-center bg-white bg-opacity-50 text-xl md:text-2xl "
                 >
                     {text}
+                    {index !== null ? index : ""}
                 </div>
             </div>
         </div>

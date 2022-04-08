@@ -9,6 +9,7 @@ function Quran(props) {
     const [reciters, setReciters] = useState();
     const [identifier, setIdentifier] = useState("ar.abdullahbasfar");
     const [surah, setSurah] = useState();
+    const [ensurah, setEnSurah] = useState();
     const [surahnumber, setSurahNumber] = useState(1);
     const [meta, setMeta] = useState();
     const [audio, setAudio] = useState();
@@ -51,6 +52,16 @@ function Quran(props) {
                 console.log(error);
             });
     };
+    const getEnSurah = () => {
+        axios
+            .get(`https://api.alquran.cloud/v1/surah/${surahnumber}/en.asad`)
+            .then(function (response) {
+                setEnSurah(response.data.data.ayahs);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
     useEffect(() => {
         getReciters();
@@ -59,6 +70,7 @@ function Quran(props) {
 
     useEffect(() => {
         getSurah();
+        getEnSurah();
         return () => {
             setIndex(0);
             setAudio();
@@ -93,7 +105,7 @@ function Quran(props) {
 
     return (
         <>
-            <div className="bg-player-bg bg-cover bg-center h-screen py-8 w-full flex flex-col text-slate-500">
+            <div className="bg-player-bg bg-cover bg-center h-screen py-12 px-w-full flex flex-col text-slate-900">
                 <div className="mt-12 flex justify-around items-center">
                     <div dir="rtl">
                         {!reciters && <div>Reciters Loading ...</div>}
@@ -138,8 +150,29 @@ function Quran(props) {
                         )}
                     </div>
                 </div>
-                {surah && <ArAyah {...surah[index]} />}
-                {surah && <EnAyah {...surah[index]} />}{" "}
+                <div className="flex flex-col mt-8">
+                    <img
+                        src="assets/top.png"
+                        className="px-8 h-40 object-contain"
+                    />
+                    {surah && (
+                        <ArAyah
+                            {...surah[index]}
+                            index={index > 0 ? index : null}
+                        />
+                    )}
+
+                    {ensurah && (
+                        <EnAyah
+                            {...ensurah[index]}
+                            index={index > 0 ? index : null}
+                        />
+                    )}
+                    <img
+                        src="assets/bottom.png"
+                        className="px-8 h-40 object-contain"
+                    />
+                </div>
                 {audio && (
                     <Player
                         {...audio[index]}

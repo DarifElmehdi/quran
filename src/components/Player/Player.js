@@ -7,7 +7,6 @@ function Player(props) {
             {audio && (
                 <AudioPlayer
                     src={audio}
-                    autoPlay
                     volume={0.4}
                     onEnded={() => onEnded()}
                     onClickNext={() => onClickNext()}
