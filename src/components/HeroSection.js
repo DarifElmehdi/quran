@@ -9,12 +9,7 @@ function HeroSection(props) {
         { key: 5, title: "Maryam", link: "/" },
     ];
     return (
-        <div
-            className="md:bg-cover bg-center bg-no-repeat w-full flex justify-center pt-20"
-            style={{
-                backgroundImage: `url(assets/hero-bg.jpg)`,
-            }}
-        >
+        <div className="bg-hero-bg md:bg-cover bg-center bg-no-repeat w-full flex justify-center pt-20">
             <div className="relative z-0">
                 <div className=" flex justify-center my-8 h-36 md:h-52 md:my-12">
                     <img src="/assets/quran-kareem.png" alt="quran" />

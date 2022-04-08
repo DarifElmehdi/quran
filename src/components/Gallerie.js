@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Surah from "./Surah";
-import Player from "./Player";
+import Surah from "./Surah/Surah";
 function Gallerie(props) {
     let [surah, setSurah] = useState();
-    let [play, setPlay] = useState(0);
     const fetchSurahs = () => {
         axios
             .get(
@@ -19,7 +17,6 @@ function Gallerie(props) {
     }, []);
     return (
         <>
-            <Player number_of_surah={play}></Player>
             <div className="flex w-full  justify-center">
                 <div className=" my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
                     {!surah && <div> loading....</div>}
@@ -28,7 +25,6 @@ function Gallerie(props) {
                             <div
                                 key={item.number_of_surah}
                                 className="cursor-pointer"
-                                onClick={() => setPlay(item.number_of_surah)}
                             >
                                 <Surah
                                     name={item.name}

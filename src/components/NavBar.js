@@ -11,7 +11,7 @@ function NavBar(props) {
     let [open, setOpen] = useState(false);
     return (
         <div className=" shadow-md w-full fixed z-50">
-            <div className="md:flex bg-white px-4 md:px-10 md:justify-between">
+            <div className="lg:flex bg-white px-4 lg:px-10 lg:justify-between">
                 <div className="cursor-pointer flex items-center">
                     <img
                         src="/assets/logo.png"
@@ -28,10 +28,10 @@ function NavBar(props) {
                 <ul
                     className={`${
                         !open ? "hidden" : ""
-                    } md:visible md:flex md:items-center md:space-x-4`}
+                    } lg:visible lg:flex lg:items-center lg:space-x-4`}
                 >
                     {links.map((link) => (
-                        <li key={link.key} className=" m-4 md:ml-8">
+                        <li key={link.key} className=" m-4 lg:ml-8">
                             <a
                                 href={link.url}
                                 className="p-2 rounded-lg text-slate-900 font-medium hover:bg-slate-100 hover:text-yellow-500"
@@ -40,18 +40,18 @@ function NavBar(props) {
                             </a>
                         </li>
                     ))}
-                    <button className=" m-4 md:ml-8 px-4 py-2 rounded-full bg-cyan-500 hover:bg-cyan-600 text-white">
+                    <button className="m-2 lg:ml-8 px-4 py-1 rounded-full bg-cyan-500 hover:bg-cyan-600 text-white">
                         Play Quran
                     </button>
                 </ul>
                 {open ? (
                     <XIcon
-                        className="cursor-pointer w-10 h-10 absolute top-2 right-8 md:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
+                        className="cursor-pointer w-10 h-10 absolute top-2 right-8 lg:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
                         onClick={() => setOpen(!open)}
                     ></XIcon>
                 ) : (
                     <MenuIcon
-                        className="cursor-pointer w-10 h-10 absolute top-2 right-8  md:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
+                        className="cursor-pointer w-10 h-10 absolute top-2 right-8  lg:hidden hover:bg-slate-100 hover:border-2 hover:border-yellow-500"
                         onClick={() => setOpen(!open)}
                     ></MenuIcon>
                 )}
