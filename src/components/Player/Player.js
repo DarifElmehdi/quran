@@ -6,7 +6,7 @@ function Player(props) {
     return (
         <div className="fixed w-full bottom-0">
             <AudioPlayer
-                volume={0.1}
+                volume={0.5}
                 autoPlay
                 id={id}
                 src={audio}
