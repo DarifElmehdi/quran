@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Surah from "../surahs/Surah";
-import Player from "../player/Player";
+import Player from "../Player/Player";
 
 function Surahs(props) {
     const [audioList, setAudioList] = useState([]);
