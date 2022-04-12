@@ -3,7 +3,7 @@ import { PlayIcon, DownloadIcon } from "@heroicons/react/outline";
 import NumberAvatar from "../avatar/NumberAvatar";
 
 function Surah(props) {
-    let { number, arName, enName, enTrName } = props;
+    let { number, arName, enName, enTrName, url, setAudio } = props;
     return (
         <div className="py-2 px-2 flex flex-row rounded-md bg-gray-200  items-center">
             <NumberAvatar number={number} />
@@ -21,7 +21,10 @@ function Surah(props) {
                 </div>
             </div>
             <DownloadIcon className="h-8 w-8 mx-2 text-slate-600 cursor-pointer" />
-            <PlayIcon className="h-8 w-8 mx-2 text-slate-600 cursor-pointer" />
+            <PlayIcon
+                className="h-8 w-8 mx-2 text-slate-600 cursor-pointer"
+                onClick={() => setAudio(url)}
+            />
         </div>
     );
 }

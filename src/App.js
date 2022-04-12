@@ -38,7 +38,6 @@ function App() {
                             <NavBar />
                             <HeroSection />
                             <Surahs />
-                            <Footer />
                         </>
                     }
                 />
