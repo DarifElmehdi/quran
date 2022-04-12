@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SurahData from "../surah/SurahData";
+import SurahInfo from "../surah/SurahInfo";
 
 function QuranSurahs(props) {
     const [surahList, setSurahList] = useState();
@@ -20,7 +20,7 @@ function QuranSurahs(props) {
             {!surahList && <div>LOADING ...</div>}
             {surahList &&
                 surahList.map((item) => (
-                    <SurahData
+                    <SurahInfo
                         key={item.number}
                         number={item.number}
                         arName={item.name}

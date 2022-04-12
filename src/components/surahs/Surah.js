@@ -1,31 +1,29 @@
 import React from "react";
-import AyahsNumberAvatar from "../avatar/AyahsNumberAvatar";
+import { PlayIcon, DownloadIcon } from "@heroicons/react/outline";
 import NumberAvatar from "../avatar/NumberAvatar";
 
-function SurahData(props) {
-    let { number, arName, enName, enType, arType, numberOfAyahs } = props;
+function Surah(props) {
+    let { number, arName, enName, enTrName } = props;
     return (
         <div className="py-2 px-2 flex flex-row rounded-md bg-gray-200  items-center">
             <NumberAvatar number={number} />
             <div className="mx-2 grow flex flex-row justify-between items-center text-gray-500">
-                <div className="w-full md:px-6 lg:px-8 grid grid-cols-2 grid-rows-2  gap-2">
+                <div className="w-full md:px-6 lg:px-8 grid grid-cols-2 lg:grid-cols-3 gap-2">
                     <div>
                         <p>{enName}</p>
+                    </div>
+                    <div className="hidden lg:block">
+                        <p>{enTrName}</p>
                     </div>
                     <div dir="rtl">
                         <p>{arName}</p>
                     </div>
-                    <div>
-                        <p>{enType}</p>
-                    </div>
-                    <div dir="rtl">
-                        <p>{arType}</p>
-                    </div>
                 </div>
             </div>
-            <AyahsNumberAvatar number={numberOfAyahs + " Ayahs"} />
+            <DownloadIcon className="h-8 w-8 mx-2 text-slate-600 cursor-pointer" />
+            <PlayIcon className="h-8 w-8 mx-2 text-slate-600 cursor-pointer" />
         </div>
     );
 }
 
-export default SurahData;
+export default Surah;
