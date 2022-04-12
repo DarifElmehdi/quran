@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon, PlayIcon, PauseIcon } from "@heroicons/react/outline";
-import Radio from "../player/Radio";
+import Radio from "../player/Radio.js";
 
 function NavBar() {
     let links = [
