@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import SurahInfo from "../surah/SurahInfo";
+import SurahInfo from "../surahs/SurahInfo";
 
 function QuranSurahs(props) {
     const [surahList, setSurahList] = useState();
