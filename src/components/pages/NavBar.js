@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon, PlayIcon, PauseIcon } from "@heroicons/react/outline";
+import { Link } from "react-router-dom";
 import Radio from "../radio/Radio";
 
 function NavBar() {
@@ -56,12 +57,11 @@ function NavBar() {
                 >
                     {links.map((link) => (
                         <li key={link.key} className=" m-4 lg:ml-8">
-                            <a
-                                href={link.url}
-                                className="px-2 py-1 rounded-full font-medium hover:bg-slate-100 hover:bg-opacity-20 "
-                            >
-                                {link.title}
-                            </a>
+                            <Link to={link.url}>
+                                <a className="px-2 py-1 rounded-full font-medium hover:bg-slate-100 hover:bg-opacity-20 ">
+                                    {link.title}
+                                </a>
+                            </Link>
                         </li>
                     ))}
                     <button

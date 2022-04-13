@@ -1,5 +1,5 @@
 import React from "react";
-import { PlayIcon, DownloadIcon } from "@heroicons/react/outline";
+import { PlayIcon } from "@heroicons/react/outline";
 import NumberAvatar from "../avatar/NumberAvatar";
 
 function Surah(props) {
@@ -20,7 +20,6 @@ function Surah(props) {
                     </div>
                 </div>
             </div>
-            <DownloadIcon className="h-8 w-8 mx-2 text-slate-600 cursor-pointer" />
             <PlayIcon
                 className="h-8 w-8 mx-2 text-slate-600 cursor-pointer"
                 onClick={() => setAudio(url)}
