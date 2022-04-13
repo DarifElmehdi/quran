@@ -35,7 +35,7 @@ function Surahs(props) {
     useEffect(() => {
         getAudios();
         getReciter();
-    });
+    }, [identifier]);
 
     const searchHandler = () => {
         setFiltredList(

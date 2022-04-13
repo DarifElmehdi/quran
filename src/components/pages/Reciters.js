@@ -39,7 +39,7 @@ function Reciters(props) {
         <div>
             <div className="label">
                 <h2>Available Reciters</h2>
-                <h2 dir="rtl"> القراء المتاحون</h2>
+                <h2 dir="rtl"> التلاوات المتاحة</h2>
             </div>
             {filtredList && (
                 <Search
