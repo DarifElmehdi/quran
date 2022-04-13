@@ -15,7 +15,8 @@ function App() {
                     element={
                         <>
                             <NavBar />
-                            <HeroSection />
+                            <HeroSection img="/assets/quran-kareem.png" />
+                            <div className="h-screen" />
                             <Footer />
                         </>
                     }
@@ -25,7 +26,7 @@ function App() {
                     element={
                         <>
                             <NavBar />
-                            <HeroSection />
+                            <HeroSection img="/assets/quran-kareem.png" />
                             <Reciters />
                             <Footer />
                         </>
@@ -36,7 +37,7 @@ function App() {
                     element={
                         <>
                             <NavBar />
-                            <HeroSection />
+                            <HeroSection img="/assets/quran-kareem.png" />
                             <Surahs />
                         </>
                     }
@@ -46,20 +47,9 @@ function App() {
                     element={
                         <>
                             <NavBar />
-                            <HeroSection />
-
+                            <HeroSection img="/assets/quran-kareem.png" />
                             <QuranSurahs />
                             <Footer />
-                        </>
-                    }
-                />
-                <Route
-                    path="/quran"
-                    element={
-                        <>
-                            <NavBar />
-                            <HeroSection />
-                            <div>in quran section</div>
                         </>
                     }
                 />

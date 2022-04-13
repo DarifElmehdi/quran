@@ -9,8 +9,19 @@ function Surahs(props) {
     const [audioList, setAudioList] = useState([]);
     const [audio, setAudio] = useState("");
     const [filtredList, setFiltredList] = useState();
+    const [reciter, setReciter] = useState();
     const searchTerm = useRef("");
     let { identifier } = useParams();
+
+    const getReciter = () => {
+        axios
+            .get("https://alquran-server.herokuapp.com/reciter/" + identifier)
+            .then((res) => {
+                setReciter(res.data);
+            })
+            .catch((err) => console.log(err));
+    };
+
     const getAudios = () => {
         axios
             .get("https://alquran-server.herokuapp.com/audiolist/" + identifier)
@@ -23,7 +34,8 @@ function Surahs(props) {
 
     useEffect(() => {
         getAudios();
-    }, []);
+        getReciter();
+    });
 
     const searchHandler = () => {
         setFiltredList(
@@ -44,9 +56,29 @@ function Surahs(props) {
 
     return (
         <div>
-            <Search searchterm={searchTerm} searchhandler={searchHandler} />
-            <div className="mt-4 mb-10 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-2">
-                {!filtredList && <div>LOADING ...</div>}
+            {reciter && (
+                <div className="label">
+                    <h2>{reciter.en_name + " >" + reciter.en_riwaya}</h2>
+                    <h2 dir="rtl" className="hidden md:block">
+                        {reciter.ar_name + " >" + reciter.ar_riwaya}
+                    </h2>
+                </div>
+            )}
+            {filtredList && (
+                <Search
+                    searchterm={searchTerm}
+                    searchhandler={searchHandler}
+                    placeholder="Search Reciter"
+                />
+            )}
+
+            {!filtredList && (
+                <div className="w-full flex justify-center">
+                    <img src="../assets/loading.gif" alt="Loading .." />
+                </div>
+            )}
+
+            <div className="surahs-container">
                 {filtredList &&
                     filtredList.map((item, index) => (
                         <Surah

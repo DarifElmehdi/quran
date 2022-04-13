@@ -7,6 +7,7 @@ function QuranSurahs(props) {
     const [surahList, setSurahList] = useState();
     const [filtredList, setFiltredList] = useState();
     const searchTerm = useRef("");
+
     const getSurahList = () => {
         axios
             .get("https://alquran-server.herokuapp.com/surahs")
@@ -38,9 +39,24 @@ function QuranSurahs(props) {
     };
     return (
         <div>
-            <Search searchterm={searchTerm} searchhandler={searchHandler} />
-            <div className="my-4 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
-                {!filtredList && <div>LOADING ...</div>}
+            <div className="label">
+                <h2>Quran Surahs</h2>
+                <h2 dir="rtl">سور القران</h2>
+            </div>
+            {filtredList && (
+                <Search
+                    searchterm={searchTerm}
+                    searchhandler={searchHandler}
+                    placeholder="Search Reciter"
+                />
+            )}
+
+            {!filtredList && (
+                <div className="w-full flex justify-center">
+                    <img src="../assets/loading.gif" alt="Loading .." />
+                </div>
+            )}
+            <div className="quran-surahs-container">
                 {filtredList &&
                     filtredList.map((item) => (
                         <SurahInfo

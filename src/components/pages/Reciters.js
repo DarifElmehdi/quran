@@ -36,12 +36,26 @@ function Reciters(props) {
     };
 
     return (
-        <div className="my-4 mx-2">
-            <Search searchterm={searchTerm} searchhandler={searchHandler} />
-            {!filtredList && <div> LOADING ...</div>}
+        <div>
+            <div className="label">
+                <h2>Available Reciters</h2>
+                <h2 dir="rtl"> القراء المتاحون</h2>
+            </div>
             {filtredList && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-                    {filtredList.map((item) => (
+                <Search
+                    searchterm={searchTerm}
+                    searchhandler={searchHandler}
+                    placeholder="Search Reciter"
+                />
+            )}
+            {!filtredList && (
+                <div className="w-full flex justify-center">
+                    <img src="assets/loading.gif" alt="Loading .." />
+                </div>
+            )}
+            <div className="card-container">
+                {filtredList &&
+                    filtredList.map((item) => (
                         <Reciter
                             key={recitersList.indexOf(item)}
                             enName={item.en_name}
@@ -49,8 +63,7 @@ function Reciters(props) {
                             identifier={item.identifier}
                         />
                     ))}
-                </div>
-            )}
+            </div>
         </div>
     );
 }
