@@ -95,7 +95,7 @@ function Surahs(props) {
                         />
                     ))}
             </div>
-            <Player audio={audio} />
+            <Player audio={audio} audiolist={audioList} />
         </div>
     );
 }
