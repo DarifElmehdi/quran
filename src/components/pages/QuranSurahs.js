@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import SurahInfo from "../surahs/SurahInfo";
+import Search from "../search/Search";
 
 function QuranSurahs(props) {
     const [surahList, setSurahList] = useState();
@@ -20,7 +21,6 @@ function QuranSurahs(props) {
     }, []);
 
     const searchHandler = () => {
-        console.log(filtredList);
         setFiltredList(
             surahList.filter(
                 (item) =>
@@ -29,25 +29,20 @@ function QuranSurahs(props) {
                         .includes(searchTerm.current.value.toLowerCase()) ||
                     item.englishNameTranslation
                         .toLowerCase()
+                        .includes(searchTerm.current.value.toLowerCase()) ||
+                    item.name
+                        .toLowerCase()
                         .includes(searchTerm.current.value.toLowerCase())
             )
         );
     };
     return (
         <div>
-            <div className="flex items-center justify-center">
-                <input
-                    className="px-4 py-2 m-4 w-96 border-2 border-gray-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-s"
-                    type="search"
-                    placeholder="Search"
-                    ref={searchTerm}
-                    onChange={() => searchHandler()}
-                ></input>
-            </div>
+            <Search searchterm={searchTerm} searchhandler={searchHandler} />
             <div className="my-4 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2">
                 {!filtredList && <div>LOADING ...</div>}
                 {filtredList &&
-                    surahList.map((item) => (
+                    filtredList.map((item) => (
                         <SurahInfo
                             key={item.number}
                             number={item.number}

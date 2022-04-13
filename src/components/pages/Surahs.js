@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Surah from "../surahs/Surah";
 import Player from "../Player/Player";
+import Search from "../search/Search";
 
 function Surahs(props) {
     const [audioList, setAudioList] = useState([]);
@@ -33,6 +34,9 @@ function Surahs(props) {
                         .includes(searchTerm.current.value.toLowerCase()) ||
                     item.en_tr_name
                         .toLowerCase()
+                        .includes(searchTerm.current.value.toLowerCase()) ||
+                    item.ar_name
+                        .toLowerCase()
                         .includes(searchTerm.current.value.toLowerCase())
             )
         );
@@ -40,15 +44,7 @@ function Surahs(props) {
 
     return (
         <div>
-            <div className="flex items-center justify-center">
-                <input
-                    className="px-4 py-2 m-4 w-96 border-2 border-gray-200 focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-s"
-                    type="search"
-                    placeholder="Search"
-                    ref={searchTerm}
-                    onChange={() => searchHandler()}
-                ></input>
-            </div>
+            <Search searchterm={searchTerm} searchhandler={searchHandler} />
             <div className="mt-4 mb-10 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-2">
                 {!filtredList && <div>LOADING ...</div>}
                 {filtredList &&
