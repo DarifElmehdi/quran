@@ -12,6 +12,7 @@ function Player(props) {
     };
     useEffect(() => {
         setSrc(audio);
+        console.log(audio);
     }, [audio]);
 
     return (

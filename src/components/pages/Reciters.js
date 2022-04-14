@@ -25,12 +25,12 @@ function Reciters(props) {
         setFiltredList(
             recitersList.filter(
                 (item) =>
-                    item.en_name.includes(
-                        searchTerm.current.value.toLowerCase()
-                    ) ||
-                    item.ar_name.includes(
-                        searchTerm.current.value.toLowerCase()
-                    )
+                    item.en_name
+                        .toLowerCase()
+                        .includes(searchTerm.current.value.toLowerCase()) ||
+                    item.ar_name
+                        .toLowerCase()
+                        .includes(searchTerm.current.value.toLowerCase())
             )
         );
     };
