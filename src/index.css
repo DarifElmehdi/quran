@@ -11,7 +11,7 @@ html {
 }
 
 .surahs-container {
-    @apply mt-4 mb-10 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-2;
+    @apply mt-4 mb-32 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-2;
 }
 
 .quran-surahs-container {
@@ -19,5 +19,5 @@ html {
 }
 
 .card-container {
-    @apply mt-4 mb-10 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2;
+    @apply mt-4 mb-32 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2;
 }
