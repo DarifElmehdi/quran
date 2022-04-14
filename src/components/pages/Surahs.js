@@ -73,7 +73,7 @@ function Surahs(props) {
             )}
 
             {!filtredList && (
-                <div className="w-full flex justify-center">
+                <div className="loader">
                     <img src="../assets/loading.gif" alt="Loading .." />
                 </div>
             )}

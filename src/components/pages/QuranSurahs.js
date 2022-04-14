@@ -50,9 +50,8 @@ function QuranSurahs(props) {
                     placeholder="Search Reciter"
                 />
             )}
-
             {!filtredList && (
-                <div className="w-full flex justify-center">
+                <div className="loader">
                     <img src="../assets/loading.gif" alt="Loading .." />
                 </div>
             )}

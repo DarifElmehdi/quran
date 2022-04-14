@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuIcon, XIcon, PlayIcon, PauseIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
 import Radio from "../radio/Radio";
 
-function NavBar() {
+function NavBar(props) {
     let links = [
         { key: 1, title: "Home", url: "/" },
         { key: 2, title: "Reciters", url: "/reciters" },
@@ -15,6 +15,7 @@ function NavBar() {
     const [open, setOpen] = useState(false);
     const [nav, setNav] = useState(false);
     const [radio, setRadio] = useState(false);
+    const [showRadio, setShowRadio] = useState(true);
 
     const changBackground = () => {
         window.scrollY > 300 ? setNav(true) : setNav(false);
@@ -31,6 +32,12 @@ function NavBar() {
             setRadio(true);
         }
     };
+
+    useEffect(() => {
+        setShowRadio(!window.location.pathname.includes("audio"));
+        !showRadio && setRadio(false);
+    });
+
     return (
         <div
             className={
@@ -73,23 +80,25 @@ function NavBar() {
                             Contact me
                         </a>
                     </li>
-                    <li
-                        className="ml-4 lg:ml-8 w-40 my-4 lg:mt-0 lg:mb-0 px-2 py-1 rounded-full bg-cyan-500 hover:bg-cyan-100 hover:text-slate-800 text-white cursor-pointer"
-                        onClick={() => handleRadio()}
-                    >
-                        {!radio && (
-                            <div className="flex items-center">
-                                <PlayIcon className="h-8 w-8 mr-2" />
-                                Play Radio
-                            </div>
-                        )}
-                        {radio && (
-                            <div className="flex items-center">
-                                <PauseIcon className="h-8 w-8 mr-2" />
-                                Pause Radio
-                            </div>
-                        )}
-                    </li>
+                    {showRadio && (
+                        <li
+                            className="ml-4 lg:ml-8 w-40 my-4 lg:mt-0 lg:mb-0 px-2 py-1 rounded-full bg-cyan-500 hover:bg-cyan-100 hover:text-slate-800 text-white cursor-pointer"
+                            onClick={() => handleRadio()}
+                        >
+                            {!radio && (
+                                <div className="flex items-center">
+                                    <PlayIcon className="h-8 w-8 mr-2" />
+                                    Play Radio
+                                </div>
+                            )}
+                            {radio && (
+                                <div className="flex items-center">
+                                    <PauseIcon className="h-8 w-8 mr-2" />
+                                    Pause Radio
+                                </div>
+                            )}
+                        </li>
+                    )}
                 </ul>
                 {open ? (
                     <XIcon
@@ -103,7 +112,12 @@ function NavBar() {
                     ></MenuIcon>
                 )}
             </div>
-            <Radio id="radio" audio={"https://qurango.net/radio/tarateel"} />
+            {showRadio && (
+                <Radio
+                    id="radio"
+                    audio={"https://qurango.net/radio/tarateel"}
+                />
+            )}
         </div>
     );
 }

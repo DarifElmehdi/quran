@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    @apply font-mono;
+    @apply font-normal;
 }
 
 .label {
@@ -20,4 +20,8 @@ html {
 
 .card-container {
     @apply mt-4 mb-32 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2;
+}
+
+.loader {
+    @apply h-screen  flex justify-center items-start;
 }

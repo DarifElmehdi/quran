@@ -49,8 +49,8 @@ function Reciters(props) {
                 />
             )}
             {!filtredList && (
-                <div className="w-full flex justify-center">
-                    <img src="assets/loading.gif" alt="Loading .." />
+                <div className="loader">
+                    <img src="../assets/loading.gif" alt="Loading .." />
                 </div>
             )}
             <div className="card-container">
