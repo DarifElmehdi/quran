@@ -8,7 +8,7 @@ function NavBar(props) {
         { key: 1, title: "Home", url: "/" },
         { key: 2, title: "Reciters", url: "/reciters" },
         { key: 3, title: "Surahs", url: "/quransurahs" },
-        { key: 4, title: "Verse by Verses", url: "/versebyverse" },
+        { key: 4, title: "Verse by Verse", url: "/versebyverse" },
     ];
     let mailto =
         "mailto:elmehdi_darif@um5.ac.ma?subject=Quran Live WebSite&cc=darifmehdi1998@gmail.com&body=Feel free to contact us";
