@@ -113,11 +113,10 @@ function NavBar(props) {
                     ></MenuIcon>
                 )}
             </div>
+            {showRadio && (
+                <Radio id="radio" audio="https://qurango.net/radio/tarateel" />
+            )}
         </div>
     );
 }
 export default NavBar;
-
-/* {showRadio && (
-                <Radio id="radio" audio="https://qurango.net/radio/tarateel" />
-            )}*/
