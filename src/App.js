@@ -5,6 +5,8 @@ import Surahs from "./components/pages/Surahs";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import QuranSurahs from "./components/pages/QuranSurahs";
 import Footer from "./components/pages/Footer";
+import Statistics from "./components/pages/Statistics";
+import RandomAyah from "./components/pages/RandomAyah";
 
 function App() {
     return (
@@ -16,7 +18,8 @@ function App() {
                         <>
                             <NavBar />
                             <HeroSection img="/assets/quran-kareem.png" />
-                            <div className="h-screen" />
+                            <RandomAyah />
+                            <Statistics />
                             <Footer />
                         </>
                     }

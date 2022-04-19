@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri&family=Inconsolata:wght@200;300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
-    @apply font-normal;
+    @apply font-amiri font-normal;
 }
 
 .label {
@@ -19,7 +21,7 @@ html {
 }
 
 .card-container {
-    @apply mt-4 mb-32 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2;
+    @apply mt-4 mb-32 px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-2;
 }
 
 .loader {

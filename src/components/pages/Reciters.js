@@ -9,7 +9,7 @@ function Reciters(props) {
     const searchTerm = useRef("");
     const getReciters = () => {
         axios
-            .get("https://alquran-server.herokuapp.com/reciters")
+            .get("http://localhost:8000/reciters")
             .then((res) => {
                 setRecitersList(res.data);
                 setFiltredList(res.data);

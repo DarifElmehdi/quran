@@ -7,7 +7,8 @@ function NavBar(props) {
     let links = [
         { key: 1, title: "Home", url: "/" },
         { key: 2, title: "Reciters", url: "/reciters" },
-        { key: 5, title: "Surahs", url: "/quransurahs" },
+        { key: 3, title: "Surahs", url: "/quransurahs" },
+        { key: 4, title: "Verse by Verses", url: "/versebyverse" },
     ];
     let mailto =
         "mailto:elmehdi_darif@um5.ac.ma?subject=Quran Live WebSite&cc=darifmehdi1998@gmail.com&body=Feel free to contact us";
@@ -112,14 +113,11 @@ function NavBar(props) {
                     ></MenuIcon>
                 )}
             </div>
-            {showRadio && (
-                <Radio
-                    id="radio"
-                    audio={"https://qurango.net/radio/tarateel"}
-                />
-            )}
         </div>
     );
 }
-
 export default NavBar;
+
+/* {showRadio && (
+                <Radio id="radio" audio="https://qurango.net/radio/tarateel" />
+            )}*/

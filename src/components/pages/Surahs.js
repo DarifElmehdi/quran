@@ -15,7 +15,7 @@ function Surahs(props) {
 
     const getReciter = () => {
         axios
-            .get("https://alquran-server.herokuapp.com/reciter/" + identifier)
+            .get("http://localhost:8000/reciter/" + identifier)
             .then((res) => {
                 setReciter(res.data);
             })
@@ -24,7 +24,7 @@ function Surahs(props) {
 
     const getAudios = () => {
         axios
-            .get("https://alquran-server.herokuapp.com/audiolist/" + identifier)
+            .get("http://localhost:8000/audiolist/" + identifier)
             .then((res) => {
                 setAudioList(res.data);
                 setFiltredList(res.data);

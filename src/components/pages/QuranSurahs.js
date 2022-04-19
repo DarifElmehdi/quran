@@ -10,7 +10,7 @@ function QuranSurahs(props) {
 
     const getSurahList = () => {
         axios
-            .get("https://alquran-server.herokuapp.com/surahs")
+            .get("http://localhost:8000/surahs")
             .then((res) => {
                 setSurahList(res.data);
                 setFiltredList(res.data);
