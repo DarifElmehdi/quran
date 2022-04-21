@@ -3,7 +3,7 @@ import Stats from "../stats/Stats";
 
 function Statistics(props) {
     return (
-        <div className="p-4 grid grid-cols-1 lg:grid-cols-3 gap-4 bg-cyan-100 bg-opacity-25 mx-4 md:mx-10 lg:mx-32 my-6 rounded-xl">
+        <div className="p-4 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-28 gap-y-4 bg-cyan-400 bg-opacity-25 mx-4 md:mx-10 lg:mx-32 my-6 rounded-xl">
             <Stats
                 img="assets\reciter.png"
                 enfact="Riwaya"

@@ -2,9 +2,9 @@ import React from "react";
 
 function Stats({ number, arfact, enfact, img }) {
     return (
-        <div className="m-auto w-full px-2 py-4 block text-center bg-white rounded-xl">
+        <div className="m-auto w-full px-2 py-2 block text-center bg-white rounded-xl">
             <img
-                className="mx-auto my-8 h-32 aspect-square rounded-full border-2 hover:border-cyan-300"
+                className="mx-auto my-4 h-20 aspect-square "
                 src={img}
                 alt={img}
             />

@@ -39,7 +39,7 @@ function Player(props) {
                 <div className="h-8 w-full bg-white flex justify-evenly items-start">
                     <h1>{reciter["en_name"]}</h1>
                     <h1>: </h1>
-                    <h1 dir="rtl">{reciter["en_name"]}</h1>
+                    <h1 dir="rtl">{reciter["ar_name"]}</h1>
                 </div>
             )}
             <AudioPlayer
